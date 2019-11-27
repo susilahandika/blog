@@ -36,6 +36,8 @@
                         </tbody>
                     </table>
 
+                    {{ $data_kategori->render() }}
+
                     <a href="{{ route('kategori.create') }}" class="btn btn-primary">Tambah</a>
                 </div>
 
