@@ -32,7 +32,7 @@
                                     <td>{{ $a->created_at }}</td>
                                     <td>{{ $a->updated_at }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-warning btn-sm">Ubah</a>
+                                        <a href="{{ route('produk.edit', $a->id) }}" class="btn btn-warning btn-sm">Ubah</a>
                                         <a href="#" class="btn btn-danger btn-sm">Hapus</a>
                                     </td>
                                 </tr>
