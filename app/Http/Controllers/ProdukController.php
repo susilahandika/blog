@@ -11,7 +11,7 @@ class ProdukController extends Controller
     
     public function index()
     {
-        $data_produk = Produk::select('produk.id', 'produk.nama', 'produk.id_kategori', 'kategori.nama_kategori', 'produk.created_at', 'produk.updated_at')
+        $data_produk = Produk::select('produk.id', 'produk.nama', 'produk.stok', 'produk.id_kategori', 'kategori.nama_kategori', 'produk.created_at', 'produk.updated_at')
                         ->join('kategori', 'kategori.id', 'produk.id_kategori')
                         ->get();
 
