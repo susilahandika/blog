@@ -29,7 +29,15 @@
                                 <td>{{ $a->updated_at }}</td>
                                 <td>
                                     <a href="{{ route('kategori.edit', $a->id) }}" class="btn btn-warning btn-sm">Ubah</a>
-                                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                    <a href="{{ route('kategori.destroy', $a->id) }}" class="btn btn-danger btn-sm">Hapus</a>
+                                    
+                                    {{-- <a href="#" class="btn btn-danger btn-sm" onclick="run_delete({{ $a->id }})">Hapus</a> --}}
+
+                                    {{-- <form action="{{ route('kategori.destroy', $a->id) }}" method="post">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <input type="submit" value="Hapus" class="btn btn-danger btn-sm">
+                                    </form> --}}
                                 </td>
                             </tr>
                             @endforeach
@@ -46,3 +54,14 @@
     </div>
 </div>
 @endsection
+
+<script>
+
+function run_delete(id){
+    if(confirm('yakin?')){
+        alert('ID : ' + id);
+    }
+}
+
+</script>
+
