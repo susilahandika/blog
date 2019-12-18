@@ -8,6 +8,11 @@ use App\Kategori;
 
 class ProdukController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $data_produk = Produk::select('produk.id', 'produk.nama', 'produk.stok', 'produk.id_kategori', 'kategori.nama_kategori', 'produk.created_at', 'produk.updated_at')

@@ -33,10 +33,11 @@
 
                                     {{-- <form action="{{ route('kategori.destroy', $a->id) }}" method="post">
                                         {{ csrf_field() }}
-                                        {{ method_field('DELETE') }}
+                                        {{ method_field('delete') }}
 
-                                        <input type="submit" value="Hapus" class="btn btn-danger btn-sm">
+                                        <input type="submit" class="btn btn-danger btn-sm" value="Hapus">
                                     </form> --}}
+                                    
                                 </td>
                             </tr>
                             @endforeach

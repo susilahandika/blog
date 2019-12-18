@@ -7,6 +7,12 @@ use App\Kategori;
 
 class KategoriController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         // $data_kategori = Kategori::all();
@@ -22,6 +28,11 @@ class KategoriController extends Controller
 
     public function store(Request $request)
     {
+
+        $request->validate([
+            'nama_kategori' => 'required|min:3',
+        ]);
+
         $data_kategori = $request->except('_token');
 
         Kategori::create($data_kategori);
@@ -52,8 +63,10 @@ class KategoriController extends Controller
 
     public function destroy($id)
     {
+        // echo "ID yang dihapus adalah $id";
         Kategori::where('id', $id)->delete();
 
         return redirect('kategori');
+
     }
 }
